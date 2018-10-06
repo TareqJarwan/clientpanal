@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">ClientPanal</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link">Dashboard</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="!isLoggedIn  && showRegister" class="nav-item">
+          <a routerLink="/regsiter" class="nav-link">Register</a>
+        </li>
+        <li *ngIf="!isLoggedIn && showRegister" class="nav-item">
+          <a routerLink="/login" class="nav-link">Login</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a htef="#" class="nav-link">{{ loogedInUser }}</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a routerLink="/settings" class="nav-link">Settings</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a href="#" (click)="onLogoutClick()" class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
